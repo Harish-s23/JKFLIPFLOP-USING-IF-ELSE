@@ -1,5 +1,9 @@
 # JKFLIPFLOP-USING-IF-ELSE
 
+Developed by: S.harish
+
+Reg no: 24901004
+
 **AIM:** 
 
 To implement  JK flipflop using verilog and validating their functionality using their functional tables
@@ -37,21 +41,27 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 /* write all the steps invloved */
 
 **PROGRAM**
-
-/* Program for flipflops and verify its truth table in quartus using Verilog programming.
-Developed by: Haresh R
-RegisterNumber: 24901004
+module exp7(J,K,c1k,q,qbar);
+input J,K,c1k;
+output reg q;
+output reg qbar;
+initial q=0;
+initial qbar=1;
+always @(posedge c1k)
+begin
+q=((J&(~q)))|((~K)&q);
+qbar=~q;
+end
+endmodule
+/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by:S. Harish
+RegisterNumber:24901004
 */
 
 **RTL LOGIC FOR FLIPFLOPS**
-![Screenshot 2024-12-27 143424](https://github.com/user-attachments/assets/acd01b31-94f1-4739-a446-9c13a9a8ea2e)
+![Screenshot 2024-12-10 145908](https://github.com/user-attachments/assets/41d092db-e398-4c38-934d-8279a82e7ee4)
 
-
-
-**TIMING DIGRAMS FOR FLIP FLOPS**
-![Screenshot 2024-12-27 143439](https://github.com/user-attachments/assets/a3604d76-abd3-4dbf-bd8a-da92cbfd0ff8)
-
-
+**TIM![Screenshot 2024-12-10 145126](https://github.com/user-attachments/assets/c5c93a34-09b4-444e-848e-98c41516415d)
+ING DIGRAMS FOR FLIP FLOPS**
 
 **RESULTS**
-Thus the result was successfully verified
+Thus the SR flipflop is implemented successfully and truth table has verified
