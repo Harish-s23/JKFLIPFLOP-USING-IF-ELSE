@@ -1,9 +1,5 @@
 # JKFLIPFLOP-USING-IF-ELSE
 
-Developed by: S.harish
-
-Reg no: 24901004
-
 **AIM:** 
 
 To implement  JK flipflop using verilog and validating their functionality using their functional tables
@@ -37,31 +33,32 @@ By using three variable K-Map, we can get the simplified expression for next sta
 The maximum possible groupings of adjacent ones are already shown in the figure. Therefore, the simplified expression for next state Qt+1t+1 is Q(t+1)=JQ(t)′+K′Q(t)Q(t+1)=JQ(t)′+K′Q(t)
 
 **Procedure**
-
-/* write all the steps invloved */
+1.type the program in quartus software.
+2.compiler run the program.
+3.generate RTL schematic and save the logic diagram.
+4.creates nodes for input and output to generate the timing diagram.
+5.for different input combinations generates the timing diagram
 
 **PROGRAM**
-module exp7(J,K,c1k,q,qbar);
-input J,K,c1k;
+~~~
+module exp7(J,K,clk,q,qbar);
+input J,K,clk;
 output reg q;
 output reg qbar;
 initial q=0;
 initial qbar=1;
-always @(posedge c1k)
+always @(posedge clk)
 begin
-q=((J&(~q)))|((~K)&q);
+q=((J&(~q))|((~K)&q));
 qbar=~q;
 end
 endmodule
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by:S. Harish
-RegisterNumber:24901004
+~~~
+/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by:YUGABHARATHI M  RegisterNumber:212224230314
 */
-
 **RTL LOGIC FOR FLIPFLOPS**
-![Screenshot 2024-12-10 145908](https://github.com/user-attachments/assets/41d092db-e398-4c38-934d-8279a82e7ee4)
-
-**TIM![Screenshot 2024-12-10 145126](https://github.com/user-attachments/assets/c5c93a34-09b4-444e-848e-98c41516415d)
-ING DIGRAMS FOR FLIP FLOPS**
-
+![exp7](https://github.com/user-attachments/assets/4fa16774-3612-4446-b95a-f96254ef2725)
+**TIMING DIGRAMS FOR FLIP FLOPS**
+![Screenshot (112)](https://github.com/user-attachments/assets/f4e383a1-bffa-4271-bc5a-fc38ab026ed0)
 **RESULTS**
-Thus the SR flipflop is implemented successfully and truth table has verified
+Thus the JK flipflop using verilog and validating their functionality using their functional tables implemented.
